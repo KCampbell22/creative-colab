@@ -3,7 +3,7 @@ import "./SideMenu.css";
 
 export default function Sidemenu() {
   return (
-    <div className="col-2 side-menu">
+    <div className="side-menu col-12">
       <nav id="side-bar">
         <a href="#" className="side-menu-item">
           Home

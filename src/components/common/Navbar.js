@@ -1,6 +1,31 @@
 import React from "react";
+import { useState } from "react";
+import { redirect } from "react-router-dom";
 
 export default function Navbar() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleUserLog = () => {
+    // set the state in the local storage
+    if (localStorage.getItem("login") === "true") {
+      localStorage.setItem("login", false);
+
+      // redirect to the home component
+      window.location.href = "/";
+    } else {
+      localStorage.setItem("login", true);
+      // redirect to the login component
+    }
+    setLoggedIn(!loggedIn);
+  };
+
+  useState(() => {
+    if (localStorage.getItem("login") === "true") {
+      return true;
+    } else {
+      return redirect("/login");
+    }
+  });
   return (
     <div className="mb-5">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -52,6 +77,9 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+        <button type="button" onClick={handleUserLog} class="btn btn-primary">
+          Log Off
+        </button>
       </nav>
     </div>
   );

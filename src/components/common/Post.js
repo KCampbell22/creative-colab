@@ -102,14 +102,17 @@ export default function Post() {
                 </button>
               </div>
               <div>
-                {post.comments.length > 0 && (
-                  <div className="post-comments p-3">
-                    <p className="comment-count">
-                      {post.comments.length} Comments
-                    </p>
-                    <Comment comments={post.comments} />
-                  </div>
-                )}
+                {/* If there are no comments then  */}
+                {
+                  post.comments.length > 0 && (
+                    <div className="post-comments p-3">
+                      <p className="comment-count">
+                        {post.comments.length} Comments
+                      </p>
+                      <Comment comments={post.comments} />
+                    </div>
+                  ) // if there are no comments then have the comment component have
+                }
               </div>
             </div>
           );

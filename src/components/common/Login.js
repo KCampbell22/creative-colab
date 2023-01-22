@@ -35,6 +35,12 @@ export default function Login() {
                   class="btn btn-primary btn-block my-4"
                   style={{ backgroundColor: "#3490dc" }}
                   onClick={() => {
+                    // use local storage to store the the login status
+                    if (localStorage.getItem("login") === "true") {
+                      localStorage.setItem("login", "false");
+                    }
+                    localStorage.setItem("login", "true");
+                    // redirect to the home page
                     window.location.href = "/feed";
                   }}
                 >

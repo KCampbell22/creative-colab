@@ -17,10 +17,10 @@ export default function CreatePost() {
   };
 
   return (
-    <div className="row w-100 ms-2 mb-3">
+    <div className="row w-75 ms-2 mb-3">
       <div className="col-12">
-        <form className="form w-100 d-flex align-items-center justify-content-around flex-column">
-          <div className="form-group d-flex align-items-center">
+        <form className="form w-100 d-flex justify-content-around align-items-center flex-column">
+          <div className="form-group d-flex align-items-center w-75 ">
             <div className="form-group w-100">
               <textarea
                 className="form-control post-textarea"
@@ -32,29 +32,33 @@ export default function CreatePost() {
               ></textarea>
             </div>
           </div>
-          <div className="form-group d-flex align-items-center">
-            <div className="form-group form-check mx-3">
-              <label className="form-check-label">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="collaborativeCheckbox"
-                />
-                Collaborative Post
+          <div className="form-group d-flex w-75 align-items-center justify-content-around">
+            <label className="form-check-label">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="collaborativeCheckbox"
+              />
+              Collaborative Post
+            </label>
+
+            <div className="form-group mx-3">
+              <label>
+                Category
+                <select className="form-control" id="categorySelect">
+                  <option>Fiction</option>
+                  <option>Poetry</option>
+                  <option>Non-Fiction</option>
+                  <option>Screenplay</option>
+                  <option>Others</option>
+                </select>
               </label>
             </div>
-            <div className="form-group mx-3">
-              <label for="categorySelect">Category</label>
-              <select className="form-control" id="categorySelect">
-                <option>Fiction</option>
-                <option>Poetry</option>
-                <option>Non-Fiction</option>
-                <option>Screenplay</option>
-                <option>Others</option>
-              </select>
-            </div>
           </div>
-          <div className="form-group d-flex align-items-center">
+          <div
+            className="form-group d-flex align-items-center w-50"
+            id="submit-post"
+          >
             <button type="submit" className="btn btn-primary post-btn">
               Post
             </button>

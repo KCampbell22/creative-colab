@@ -1,26 +1,19 @@
 import { useState, useEffect } from "react";
 import Login from "./components/common/Login";
 import Feed from "./components/common/Feed";
-import Layout from "./Layout";
+import Home from "./components/common/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(
-    localStorage.getItem("loggedIn") === "true"
-  );
-
-  useEffect(() => {
-    localStorage.setItem("loggedIn", loggedIn);
-  }, [loggedIn]);
-
   return (
-    <>
+    <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }

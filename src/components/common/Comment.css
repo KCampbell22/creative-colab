@@ -1,1 +1,11 @@
+p{
+    text-align: left;
+    /*center the text*/
+        margin: .5rem .75rem;
+        padding: .45rem;
+}
+
+.post-header{
+    max-height: 80px;
+}
 

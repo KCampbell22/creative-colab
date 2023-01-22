@@ -1,17 +1,19 @@
 import React from "react";
-import Layout from "../../Layout";
 import Sidemenu from "./SideMenu";
 import CreatePost from "./CreatePost";
 import Post from "./Post";
 
 export default function Feed() {
   return (
-    <div className="container-fluid">
-      <div className="row">
+    <div className="row">
+      <div className="col-3">
         <Sidemenu />
-        <div id="feed" className="col-8 d-flex flex-column align-items-start">
-          {/*Post Feed */}
-          <CreatePost />
+      </div>
+      <div id="feed" className="col-8 d-flex flex-column align-items-start">
+        {/* Component to create a post, can be any genre, collaborative or not */}
+        <CreatePost />
+        <div id="post-feed" className="row">
+          {/* Displays the posts in the feed */}
           <Post />
         </div>
       </div>
